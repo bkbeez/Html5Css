@@ -130,6 +130,17 @@ hr {
 .site-body .content {
     padding: 0 15px;
 }
+.site-body .content h2 {
+    line-height: 50px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.site-body .content hr {
+    margin-top:0;
+    border-width:2px;
+    border-color:#f1f1f1;
+}
 /* Site Foot */
 .site-foot {
     width: 100%;
@@ -137,7 +148,7 @@ hr {
 }
 
 
-/* About */
+/* Intro */
 .card {
     float: left;
     width: 300px;
@@ -163,8 +174,8 @@ hr {
 }
 .card .card-body {
     font-size: 16px;
-    line-height: 28px;
-    padding: 10px 0 10px 15px;
+    line-height: 24px;
+    padding: 12px 15px;
 }
 .card .card-body div {
     overflow:hidden;
@@ -195,14 +206,7 @@ hr {
     padding: 0 15px 1px 15px;
     background-color: white;
 }
-.skills h1 {
-    font-size: 20px;
-    line-height: 50px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-.skills h4 {
+.skills h3 {
     font-family: fantasy;
 }
 .skills img {
@@ -227,18 +231,10 @@ hr {
     padding: 0 15px 1px 15px;
     background-color: white;
 }
-.interests h1 {
-    font-size: 20px;
-    line-height: 50px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-.interests h4 {
+.interests h3 {
     font-family: fantasy;
-    line-height: 20px;
 }
-.interests h4 b {
+.interests h3 b {
     font-size: 24px;
 }
 .interest-lists {
@@ -417,7 +413,16 @@ hr {
         width: 100%;
     }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 575px) {
+    .card {
+        width: auto;
+        float: unset;
+        position: unset;
+    }
+    .skills {
+        margin-top: 10px;
+        margin-left: 0;
+    }
     .project-body .timeline::after {
         left: 31px;
     }
