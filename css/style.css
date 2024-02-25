@@ -128,7 +128,7 @@ hr {
     font-family: monospace;
 }
 .site-body .content {
-    padding: 0 15px;
+    padding: 0 15px 5px 15px;
 }
 .site-body .content h2 {
     line-height: 50px;
@@ -141,17 +141,11 @@ hr {
     border-width:2px;
     border-color:#f1f1f1;
 }
-/* Site Foot */
-.site-foot {
-    width: 100%;
-    display: none;
-}
-
-
 /* Intro */
 .card {
     float: left;
     width: 300px;
+    margin-bottom: 10px;
     position: absolute;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -203,6 +197,7 @@ hr {
 }
 .skills {
     margin-left: 310px;
+    margin-bottom: 10px;
     padding: 0 15px 1px 15px;
     background-color: white;
 }
@@ -227,7 +222,7 @@ hr {
 }
 .interests {
     clear: both;
-    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 0 15px 1px 15px;
     background-color: white;
 }
@@ -253,20 +248,18 @@ hr {
     background-color: #1e3250;
 }
 /* Project  */
-.project-title {
-    padding: 15px;
-    background-color: white;
-}
-.project-body {
+.projects {
+    padding:5px 0;
+    margin-bottom: 10px;
     background-color: white;
     font-family: Helvetica, sans-serif;
 }
-.project-body .timeline {
+.projects .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
-.project-body .timeline::after {
+.projects .timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -276,13 +269,13 @@ hr {
     left: 50%;
     margin-left: -3px;
 }
-.project-body .container {
+.projects .container {
     padding: 10px 0;
     position: relative;
     background-color: inherit;
     width: 50%;
 }
-.project-body .container::after {
+.projects .container::after {
     content: '';
     position: absolute;
     width: 25px;
@@ -294,25 +287,38 @@ hr {
     border-radius: 50%;
     z-index: 1;
 }
-.project-body .content {
+.projects .inner {
     color: white;
     padding: 20px 30px;
     background-color: #1ab394;
     position: relative;
     border-radius: 6px;
 }
-.project-body .content h2 {
+.projects .inner h2 {
     color: white;
-    margin-top: -12px;
+    font-size: 20px;
+    margin-top: -20px;
 }
-.project-body .content h2 b {
-    font-size: 26px;
+.projects .inner h2 b {
+    color: #1ab394;
+    width:25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
     line-height: 24px;
+    margin-right: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: white;
 }
-.project-body .left {
+.projects .inner div {
+    font-size: 16px;
+}
+.projects .left {
     left: 0;
 }
-.project-body .left::before {
+.projects .left::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -324,14 +330,14 @@ hr {
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent #1ab394;
 }
-.project-body .left .content {
+.projects .left .inner {
     margin-left: 15px;
     margin-right: 40px;
 }
-.project-body .right {
+.projects .right {
     left: 50%;
 }
-.project-body .right::before {
+.projects .right::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -343,14 +349,14 @@ hr {
     border-width: 10px 10px 10px 0;
     border-color: transparent #1ab394 transparent transparent;
 }
-.project-body .right::after {
+.projects .right::after {
     left: -16px;
 }
-.project-body .right .content {
+.projects .right .inner {
     margin-left: 40px;
     margin-right: 15px;
 }
-.project-body .container .content.last::after {
+.projects .container .inner.last::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -359,6 +365,25 @@ hr {
     bottom: -10px;
     left: -43px;
     z-index: 1;
+}
+/* Contact  */
+.table-style {
+    width: 100%;
+    font-size: 18px;
+    font-family: fantasy;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.table-style tr td {
+    color:white;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/* Footer  */
+.site-foot {
+    width: 100%;
+    display: none;
 }
 @media only all and (max-width: 768px) {
     html,body{
@@ -400,6 +425,9 @@ hr {
         margin: 0;
         background: #f3f3f4;
     }
+    .table-style {
+        font-size: 3vw;
+    }
     .site-foot {
         display: block;
         padding: 15px 0 0 0;
@@ -420,36 +448,35 @@ hr {
         position: unset;
     }
     .skills {
-        margin-top: 10px;
         margin-left: 0;
     }
-    .project-body .timeline::after {
+    .projects .timeline::after {
         left: 31px;
     }
-    .project-body .container {
+    .projects .container {
         width: 80%;
         padding-left: 70px;
         padding-right: 25px;
     }
-    .project-body .container::before {
+    .projects .container::before {
         left: 60px;
         border: medium solid #1ab394;
         border-width: 10px 10px 10px 0;
         border-color: transparent #1ab394 transparent transparent;
     }
-    .project-body .left::after,
-    .project-body .right::after {
+    .projects .left::after,
+    .projects .right::after {
         left: 15px;
     }
-    .project-body .right {
+    .projects .right {
         left: 0%;
     }
-    .project-body .left .content,
-    .project-body .right .content {
+    .projects .left .inner,
+    .projects .right .inner {
         margin-left: 0;
         margin-right: 15px;
     }
-    .project-body .container .content.last::after {
+    .projects .container .inner.last::after {
         left: -42px;
     }
 }
@@ -468,7 +495,7 @@ hr {
         font-size: 7.5vw;
         margin-right: 0;
     }
-    .project-body .container {
+    .projects .container {
         width: 70%;
     }
 }
